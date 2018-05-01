@@ -3,7 +3,8 @@ Create a virtual environment and activate it.
 Run the quick_start script
 ./quick_start.sh
 
-
+Application is running on port 5000 using gunicorn.
+nginx.conf file has the server block to reverse proxy requests on port 80 to the application.
 
 
 GET 	/v1/user/	
@@ -63,3 +64,11 @@ PUT 	/v1/blog/<int:id>
 
 DELETE 	/v1/blog/<int:id>
 	Soft delete a blog with blog.id equal to id
+
+
+
+
+NOTE:
+
+More comments to be added.
+Authentication using AES encrypted tokens to be implemented.
