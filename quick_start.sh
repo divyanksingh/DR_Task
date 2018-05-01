@@ -1,4 +1,6 @@
 pip install -r requirements.txt
+export FLASK_CONFIG=test
+export FLASK_APP=run.py
 DIR=migrations
 if [ ! -d $DIR ]
 then
