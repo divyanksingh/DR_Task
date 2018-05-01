@@ -21,8 +21,15 @@ class UserCRUD(Version1, BaseUserCrud):
 
     def get(self, id):
         if id is None:
-            # return a list of users
-            pass
+        	user_list = []
+        	users = db.session.query(UserInfo).all()
+        	for user in users:
+        		user_list.append({
+        			"name": user.display_name,
+        			"username": user.username
+        			})
+        	return (200, {"user_list": user_list}, {})
+
         else:
             user = db.session.query(UserInfo).get(id)
             if not user:
